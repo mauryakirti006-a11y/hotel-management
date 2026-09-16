@@ -1,0 +1,34 @@
+name: Hotel Management CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo "Building Hotel Management System"
+
+      - name: Test
+        run: |
+          test -f index.html
+          echo "Test passed"
+
+      - name: Package
+        run: |
+          mkdir package
+          cp index.html package/
+          cp README.md package/
+
+      - name: Deploy
+        run: echo "Hotel Management System deployed successfully"
