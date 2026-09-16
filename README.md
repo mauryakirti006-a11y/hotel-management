@@ -8,3 +8,6 @@ Modules:
 - Check-in
 - Check-out
 - Payment Management
+## Room Booking
+
+The room booking module allows guests to search and reserve available rooms.
